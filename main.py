@@ -1,6 +1,6 @@
 """
 +---------------------------------------+
-|Creado por: Jonathan Cervantes Alarcon {{{{{{| hola
+|Creado por: Jonathan Cervantes Alarcon |
 +---------------------------------------+
 """
 
@@ -22,11 +22,14 @@ def main():
     ventana = pygame.display.set_mode((ancho, alto))
     pygame.display.set_caption("Space War")
 
+    #reloj = pygame.time.Clock()
+
     player = Cuadrado(ancho, alto, 50)
     vida = True
     
     while True:
-        
+
+        #reloj.tick(560) #para regular los frames
         #ventana.fill(colorVen) #fill, funcion para dar color a la ventana
         ventana.blit(fondo, (0, 0))        
         
