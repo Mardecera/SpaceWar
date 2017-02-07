@@ -1,7 +1,7 @@
 import pygame, sys
 from pygame.locals import *
 from proyectil import * #importo todas las clases del archivo proyectil
-
+fff
 class Cuadrado(pygame.sprite.Sprite):
     def __init__(self, posx, posy, tamanio):
         pygame.sprite.Sprite.__init__(self)
