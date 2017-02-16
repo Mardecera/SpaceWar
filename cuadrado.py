@@ -17,7 +17,8 @@ class Cuadrado(pygame.sprite.Sprite):
 
     def disparar(self, x, y): #clase que ubica e inserta la bala en la lista
         bala = Proyectil(x, y)
-        self.listDisparo.append(bala)
+        if len(self.listDisparo) == 0: #para que dispare una bala por vez
+            self.listDisparo.append(bala)
     
     def dibujar(self, ventana):
         imagen = pygame.image.load("img/yo.png")

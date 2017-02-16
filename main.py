@@ -9,6 +9,7 @@ import os
 from pygame.locals import *
 from cuadrado import *
 from proyectil import *
+from enemigos import *
 
 ancho = 720
 alto = 480
@@ -25,6 +26,7 @@ def main():
     #reloj = pygame.time.Clock()
 
     player = Cuadrado(ancho, alto, 50)
+    enemigo = Enemigo(50)
     vida = True
     
     while True:
@@ -57,7 +59,7 @@ def main():
                     player.posx = (ancho - player.tamanio)
                 
         """Este if dibuja la bala que se obtuvo en el primer for y la dibuja"""
-        if len(player.listDisparo) > 0:
+        if len(player.listDisparo) == 1:
             for bala in player.listDisparo:
                 bala.dibujar(ventana)
                 bala.trayectoria()
@@ -66,6 +68,7 @@ def main():
                     player.listDisparo.remove(bala)
                 
         player.dibujar(ventana)
+        enemigo.dibujar(ventana)
         pygame.display.update() #caso contrario toda la ventana se actualiza por cada iteracion
 
 if __name__ == '__main__':
